@@ -37,7 +37,7 @@
 				    <p:outputLabel for="jogador2" value="Jogador 2"/>
 				    <p:inputText value="#{jogadaBean.jogada.jogador2}" id="jogador2"/>
 								        
-				    <p:commandButton value="Salvar" action="#{jogadaBean.save}" update="manage-game"/>
+				    <p:commandButton value="Salvar" action="#{jogadaBean.save}" onclick="limparForm()"/>
 				
 			    	</p:panelGrid>    
 			    </div>

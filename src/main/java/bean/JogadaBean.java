@@ -28,7 +28,12 @@ public class JogadaBean implements Serializable{
 			JogadaDAO.insert(jogada);
 			addInfoMessage("Sucesso", "Jogada adiciona com sucesso.");
 			Jogada v = JogadaDAO.buscarVencedor();
-			addInfoMessage("Vencedor", "Jogador(a): "+v.getResultado());
+			if(v.getResultado().equals("Empate")){
+				addInfoMessage("Empate", "Nenhum jogador ganhou, a partida terminou empatada.");
+			}else {
+				addInfoMessage("Vencedor", "Jogador(a): "+v.getResultado());	
+			}
+			jogada = new Jogada();
 		} catch (Exception e) {
 			addErrorMessage("Erro", "Erro ao adicionar a jogada.");
 		}
